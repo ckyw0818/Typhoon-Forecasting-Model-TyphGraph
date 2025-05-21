@@ -20,9 +20,7 @@ import numpy as np
 from typing_extensions import Protocol
 import xarray
 
-
 LossAndDiagnostics = tuple[xarray.DataArray, xarray.Dataset]
-
 
 class LossFunction(Protocol):
   """A loss function.

@@ -14,8 +14,8 @@ import numpy as np
 import xarray as xr
 
 import typhgraph
-from typhgraph import casting, normalization, autoregressive, data_utils, checkpoint
-from typhgraph import xarray_jax, xarray_tree
+import casting, normalization, autoregressive, data_utils, checkpoint
+import xarray_jax, xarray_tree
 
 # ------------------------------------------------------------------------------
 # 1) TyphGraph 래퍼 및 JAX 변환 함수 정의
@@ -82,7 +82,7 @@ def drop_state(fn):
 
 def main():
     # --- 3.1 모델 설정 및 체크포인트 로드 (또는 랜덤 초기화) ---
-    ckpt_path = "path/to/typhgraph_checkpoint.pkl"  # None 으로 하면 랜덤 모델
+    ckpt_path = None  # None 으로 하면 랜덤 모델
     if ckpt_path is not None:
         ckpt = checkpoint.load(open(ckpt_path, "rb"), typhgraph.CheckPoint)
         params = ckpt.params

@@ -24,7 +24,6 @@ import xarray
 
 LossAndDiagnostics = losses.LossAndDiagnostics
 
-
 class Predictor(abc.ABC):
   """A possibly-trainable predictor of weather, exposing an xarray-based API.
 
